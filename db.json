@@ -1,0 +1,29 @@
+{
+    "cars": [
+      {
+        "id": 1,
+        "make": "Toyota",
+        "model": "Corolla",
+        "year": 2019,
+        "pricePerDay": 40,
+        "image": "https://via.placeholder.com/250x150?text=Toyota+Corolla"
+      },
+      {
+        "id": 2,
+        "make": "Honda",
+        "model": "Civic",
+        "year": 2018,
+        "pricePerDay": 45,
+        "image": "https://via.placeholder.com/250x150?text=Honda+Civic"
+      },
+      {
+        "id": 3,
+        "make": "Ford",
+        "model": "EcoSport",
+        "year": 2020,
+        "pricePerDay": 50,
+        "image": "https://via.placeholder.com/250x150?text=Ford+EcoSport"
+      }
+    ]
+  }
+  
