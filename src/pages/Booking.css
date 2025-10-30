@@ -1,0 +1,69 @@
+.page-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+  }
+  
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .booking-car-image {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+  }
+  
+  .booking-form form,
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  
+  form input,
+  form select,
+  form textarea {
+    padding: 12px;
+    border-radius: 6px;
+    border: 1px solid #bdbdbd;
+    font-size: 16px;
+    transition: border-color 0.3s;
+  }
+  
+  form input:focus,
+  form textarea:focus {
+    border-color: #0077ff;
+    outline: none;
+  }
+  
+  label {
+    font-weight: 600;
+    margin-top: 8px;
+  }
+  
+  .btn-primary {
+    background: #0077ff;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 15px;
+    transition: background 0.25s;
+  }
+  
+  .btn-primary:hover {
+    background: #005ec1;
+  }
+  
+  .error {
+    text-align: center;
+    color: red;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -10,8 +11,27 @@ const Contact = () => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
+
+    emailjs.send(
+      "service_5lw96mm",    // ✅ your EmailJS service ID
+      "template_getgj87",   // ✅ your EmailJS template ID
+      
+      {
+        from_name: form.name,
+        from_email: form.email,
+        message: form.message,
+      },
+      "FWAd3Z-6YUT3c-NhW"
+    )
+    .then(() => {
+      setSubmitted(true);
+      setForm({ name: "", email: "", message: "" });
+      setTimeout(() => setSubmitted(false), 3000);
+    })
+    .catch((error) => {
+      console.error("Email failed:", error);
+      alert("Message failed to send. Try again.");
+    });
   }
 
   return (
@@ -42,7 +62,7 @@ const Contact = () => {
           required
         />
         <button type="submit" className="btn-primary">Send</button>
-        {submitted && <p className="success">Message sent!</p>}
+        {submitted && <p className="success">Message sent successfully!</p>}
       </form>
     </div>
   );

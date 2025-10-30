@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const API_URL = "http://localhost:5000/cars";
+const API_URL = "https://server-ngpi.onrender.com/cars";
 
 const Cars = () => {
   const [cars, setCars] = useState([]);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchCars();
@@ -29,9 +31,17 @@ const Cars = () => {
         {cars.map((car) => (
           <div key={car.id} className="car-card">
             <img src={car.image} alt={`${car.make} ${car.model}`} />
-            <h3>{car.make} {car.model}</h3>
+            <h3>
+              {car.make} {car.model}
+            </h3>
             <p>Year: {car.year}</p>
-            <p>Price per day: ${car.pricePerDay}</p>
+            <p>Price per day: KES{car.pricePerDay}</p>
+            <button
+              className="btn-primary"
+              onClick={() => navigate("/booking", { state: { car } })}
+            >
+              Book Now
+            </button>
           </div>
         ))}
       </div>

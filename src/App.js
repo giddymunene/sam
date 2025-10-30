@@ -6,6 +6,9 @@ import Cars from "./pages/Cars";
 import Services from "./pages/Services";
 import Contact from "./pages/Contact";
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import Booking from "./pages/Booking";
+
 import "./App.css";
 
 function App() {
@@ -19,6 +22,14 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About />} />
       </Routes>
+
+<Routes>
+  {/* Other routes */}
+  <Route path="/booking" element={<Booking />} />
+
+</Routes>
+
+<Footer />
     </Router>
   );
 }
